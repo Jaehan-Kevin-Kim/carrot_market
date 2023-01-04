@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -9,15 +10,36 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  PreferredSizeWidget _appbarWidget() {
+    return AppBar(
+      title: GestureDetector(
+          onTap: () {
+            print('click');
+          },
+          child: Row(
+            children: [Text('아라동'), Icon(Icons.arrow_drop_down)],
+          )),
+      elevation: 1,
+      actions: [
+        IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+        IconButton(onPressed: () {}, icon: Icon(Icons.tune)),
+        IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset(
+              "assets/svg/bell.svg",
+              width: 22,
+            )),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('아라동 맨'),
-        //   , style: TextStyle(color: Colors.black),),
-        // backgroundColor: Colors.white,
-        actions: [],
-      ),
+      appBar: _appbarWidget(),
+      body: Container(),
+      bottomNavigationBar: Container(),
     );
   }
 }
