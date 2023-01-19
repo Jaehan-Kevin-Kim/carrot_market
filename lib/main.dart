@@ -1,3 +1,4 @@
+import 'package:carrot_market/page/app.dart';
 import 'package:carrot_market/page/home.dart';
 import 'package:flutter/material.dart';
 
@@ -15,13 +16,11 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
           appBarTheme: const AppBarTheme(
-            backgroundColor: Colors.white,
-            foregroundColor: Colors.black
-          ),
+              backgroundColor: Colors.white, foregroundColor: Colors.black),
           // primaryColor: Colors.white,
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: const Home());
+        home: const App());
   }
 }
